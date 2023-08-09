@@ -32,7 +32,7 @@ router.post('/api/notes', (req, res) => {
   const newNote = req.body;
   newNote.id = uuidv4();
 
-  fsUtils.readNotesFile((err, notes) => {
+  fsUtils.readNotesFile((err, notes) => { // Directly call readNotesFile function
     if (err) {
       return res.status(500).json({ error: 'Error reading notes data.' });
     }
